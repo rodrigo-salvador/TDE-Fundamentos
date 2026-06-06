@@ -7,8 +7,10 @@
  */
 public class Ingrediente
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
+    private String nome;
+    private String medida;
+    private double quantidade;
+    private ControleIngrediente ingrediente[];
 
     /**
      * Construtor para objetos da classe Ingrediente

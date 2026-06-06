@@ -1,14 +1,16 @@
-
 /**
- * Escreva uma descrição da classe ControleIngrediente aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * Classe intermediária de ingrediente, onde podemos manipular o vetor de ingredientes.
+ * Adicionar métodos como:
+ * Adicionar ingrediente
+ * Remover ingrediente
+ * Procurar ingrediente
  */
 public class ControleIngrediente
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
+    private int index;
+    private Ingrediente vetIngrediente[];
+    
+    private 
 
     /**
      * Construtor para objetos da classe ControleIngrediente
