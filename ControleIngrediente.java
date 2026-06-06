@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 package Trabalho_Final;
 
 
-=======
->>>>>>> origin/develop
 /**
  * Classe intermediária de ingrediente, onde podemos manipular o vetor de ingredientes.
  * Adicionar métodos como:
