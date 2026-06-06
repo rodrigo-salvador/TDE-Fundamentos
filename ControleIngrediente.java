@@ -1,15 +1,21 @@
+<<<<<<< HEAD
 package Trabalho_Final;
 
 
+=======
+>>>>>>> origin/develop
 /**
- * Escreva uma descrição da classe ControleIngrediente aqui.
- * 
- * @author (Vasco)
- * @version (0.1.0)
+ * Classe intermediária de ingrediente, onde podemos manipular o vetor de ingredientes.
+ * Adicionar métodos como:
+ * Adicionar ingrediente
+ * Remover ingrediente
+ * Procurar ingrediente
  */
+
 public class ControleIngrediente {
     private int index;
     private Ingrediente vetIngrediente[];
+
 
     public ControleIngrediente(int tam) {
         this.index = 0;

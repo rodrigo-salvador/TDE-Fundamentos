@@ -2,7 +2,7 @@ package Trabalho_Final;
 
 
 /**
- * Escreva uma descrição da classe Prato aqui.
+ * Escreva uma descrição da classe Prato aqui. 
  * 
  * @author (VASCO)
  * @version (06.02.2026)
