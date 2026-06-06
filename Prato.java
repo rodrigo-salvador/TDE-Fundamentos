@@ -2,32 +2,53 @@
 /**
  * Escreva uma descrição da classe Prato aqui. 
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author (VASCO)
+ * @version (06.02.2026)
  */
-public class Prato
-{
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
+public class Prato {
+    private String nome;
+    private double valor;
+    private int index;
+    private ControleIngrediente vetIngrediente;
 
-    /**
-     * Construtor para objetos da classe Prato
-     */
-    public Prato()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    // construtor
+    public Prato(String nome, double valor, ControleIngrediente vetIngrediente) {
+        this.nome = nome;
+        this.valor = valor;
+        this.index = 0;
+        this.vetIngrediente = vetIngrediente;
     }
 
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    // metodos de acesso
+    // setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public void setVetIngrediente(ControleIngrediente ingrediente) {
+        this.vetIngrediente = ingrediente;
+    }
+
+    // getters
+    public String getNome() {
+        return this.nome;
+    }
+
+    public double getValor() {
+        return this.valor;
+    }
+
+    public ControleIngrediente getVetIngrediente() {
+        return this.vetIngrediente;
+    }
+
+    // toString
+    public String toString() {
+        // não consegui fazer retornar os ingredientes, só o endereço na memória
+        return "Nome: " + this.nome + "\nValor: " + this.valor + "\nIngrediente: " + this.vetIngrediente;
     }
 }
