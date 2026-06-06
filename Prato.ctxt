@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Prato
+comment0.text=\ \r\n\ Criar,\ tamb\u00E9m,\ uma\ classe\ Prato\ que\ ter\u00E1\ os\ seguintes\ atributos\:\ \r\n\ nome\ (String),\ \r\n\ valor\ (double),\ \r\n\ vetIngredientes\ (vetor\ de\ Ingredientes)\r\n\ index\ (int)\ que\ servir\u00E1\ para\ gerenciar\ as\ inser\u00E7\u00F5es\ e\ remo\u00E7\u00F5es\ dos\ ingredientes\ no\ vetIngredientes.\ \r\n\ O\ construtor\ desta\ classe\ dever\u00E1\ receber\ como\ par\u00E2metro\ o\ nome,\ o\ valor\ do\ prato\ e\ a\ quantidade\ de\ ingredientes\ que\ o\ prato\ possui.\ \r\n\ Ainda\ no\ construtor\ devem\ ser\ atribu\u00EDdos\ os\ valores\ aos\ atributos,\ inicializar\ o\ atributo\ index\ e\ instanciar\ o\ vetor\ de\ ingredientes\ (vetIngredientes)\ com\ a\ quantidade\ de\ ingredientes\ que\ o\ prato\ possui.\ \r\n\ Crie\ os\ demais\ m\u00E9todos\ b\u00E1sicos\ necess\u00E1rios\ para\ a\ classe\ (estejam\ atentos\ ao\ atributo\ index\ que\ apenas\ a\ classe\ deve\ ter\ acesso\ a\ ele\ e\ ao\ atributo\ veIngredientes\ que\ ter\u00E1\ seus\ pr\u00F3prios\ m\u00E9todos\ de\ acesso,\ relacionados\ abaixo).\ \r\n\ Al\u00E9m\ do\ construtor\ e\ dos\ m\u00E9todos\ b\u00E1sicos,\ a\ classe\ Prato\ deve\ possuir\ os\ seguintes\ m\u00E9todos\:\r\n\ a)\ adicionarIngrediente\ que\ recebe\ um\ Ingrediente\ e,\ se\ houver\ espa\u00E7o,\ adiciona-o\ ao\ vetor\ de\ ingredientes,\ retorna\ true\ se\ a\ inser\u00E7\u00E3o\ pode\ ser\ realizada\ ou\ false\ se\ a\ inser\u00E7\u00E3o\ n\u00E3o\ foi\ poss\u00EDvel;\r\n\ b)\ consultarIngrediente\ que\ recebe\ o\ nome\ do\ ingrediente,\ procura-o\ no\ vetor\ de\ ingredientes\ e\ o\ retorna;\r\n\ c)\ removerIngrediente\ que\ recebe\ o\ nome\ do\ ingrediente,\ consulta-o\ no\ vetor\ de\ ingredientes\ e,\ ao\ encontr\u00E1-lo,\ o\ remove\ do\ vetor\ de\ ingredientes,\ fazendo\ a\ reorganiza\u00E7\u00E3o\ do\ vetor\ de\ ingredientes.\ Retorna\ true\ se\ a\ remo\u00E7\u00E3o\ foi\ realizada\ com\ sucesso\ ou\ false\ se\ a\ remo\u00E7\u00E3o\ n\u00E3o\ foi\ poss\u00EDvel;\r\n\ d)\ buscarPosicao\ que\ recebe\ o\ nome\ do\ ingrediente\ e\ retorna\ a\ posi\u00E7\u00E3o\ em\ que\ ele\ est\u00E1\ armazenado\ no\ vetor\ de\ ingredientes.\ Caso\ n\u00E3o\ esteja\ armazenado,\ retorna\ -1;\r\n
+comment1.params=nome\ valor\ vetIngrediente
+comment1.target=Prato(java.lang.String,\ double,\ ControleIngrediente)
+comment2.params=nome
+comment2.target=void\ setNome(java.lang.String)
+comment3.params=valor
+comment3.target=void\ setValor(double)
+comment4.params=ingrediente
+comment4.target=void\ setVetIngrediente(ControleIngrediente)
+comment5.params=
+comment5.target=java.lang.String\ getNome()
+comment6.params=
+comment6.target=double\ getValor()
+comment7.params=
+comment7.target=ControleIngrediente\ getVetIngrediente()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

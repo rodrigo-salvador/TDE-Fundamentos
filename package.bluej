@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=Prato
-dependency1.to=ControleIngrediente
+dependency1.from=ControleIngrediente
+dependency1.to=Ingrediente
 dependency1.type=UsesDependency
-dependency2.from=ControleIngrediente
-dependency2.to=Ingrediente
+dependency2.from=Prato
+dependency2.to=ControleIngrediente
 dependency2.type=UsesDependency
 editor.fx.0.height=1408
 editor.fx.0.width=2576
@@ -68,8 +68,8 @@ target6.name=AppMain
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
-target6.x=580
-target6.y=480
+target6.x=590
+target6.y=490
 target7.height=70
 target7.name=ControleIngrediente
 target7.showInterface=false
