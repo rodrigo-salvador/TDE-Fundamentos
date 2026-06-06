@@ -1,3 +1,5 @@
+package Trabalho_Final;
+
 
 /**
  * Escreva uma descrição da classe Prato aqui.
