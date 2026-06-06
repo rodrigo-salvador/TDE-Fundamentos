@@ -1,4 +1,5 @@
 #BlueJ package file
+<<<<<<< HEAD
 dependency1.from=ControleIngrediente
 dependency1.to=Ingrediente
 dependency1.type=UsesDependency
@@ -11,16 +12,24 @@ editor.fx.0.x=-8
 editor.fx.0.y=-8
 objectbench.height=133
 objectbench.width=1538
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=93
+objectbench.width=760
+>>>>>>> 1616b74a1645405886300fb3d30d73bb0441b13d
 package.divider.horizontal=0.6
-package.divider.vertical=0.8479913137893594
-package.editor.height=774
-package.editor.width=1416
-package.editor.x=436
-package.editor.y=166
-package.frame.height=1021
-package.frame.width=1578
-package.numDependencies=2
-package.numTargets=8
+package.divider.vertical=0.8
+package.editor.height=393
+package.editor.width=638
+package.editor.x=483
+package.editor.y=273
+package.frame.height=600
+package.frame.width=800
+package.numDependencies=0
+package.numTargets=0
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -29,6 +38,7 @@ readme.name=@README
 readme.width=49
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 target1.height=70
 target1.name=Ingrediente
 target1.showInterface=false
@@ -83,3 +93,5 @@ target8.type=TextTarget
 target8.width=120
 target8.x=70
 target8.y=10
+=======
+>>>>>>> 1616b74a1645405886300fb3d30d73bb0441b13d
