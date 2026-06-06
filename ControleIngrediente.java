@@ -2,32 +2,54 @@
 /**
  * Escreva uma descrição da classe ControleIngrediente aqui.
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author (Vasco)
+ * @version (0.1.0)
  */
-public class ControleIngrediente
-{
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
+public class ControleIngrediente {
+    private int index;
+    private Ingrediente vetIngrediente[];
 
-    /**
-     * Construtor para objetos da classe ControleIngrediente
-     */
-    public ControleIngrediente()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    public ControleIngrediente(int tam) {
+        this.index = 0;
+        this.vetIngrediente = new Ingrediente[tam];
     }
 
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    public boolean insereIngrediente(Ingrediente ing) {
+        if (this.index < this.vetIngrediente.length) {
+            this.vetIngrediente[this.index] = ing;
+            this.index++;
+            return true;
+        }
+        return false;
+    }
+
+    public int encontraPos(String nome) {
+        int pos = -1;
+        for (int i = 0; i < this.index; i++) {
+            if (this.vetIngrediente[i].getNome().equals(nome)) {
+                pos = i;
+                return pos;
+            }
+        }
+        return pos;
+    }
+
+    public boolean excluirIngrediente(String nome) {
+        int pos = encontraPos(nome);
+        if (pos == -1) {
+            return false;
+        }
+        for (int i = pos; i < this.index - 1; i++) {
+            this.vetIngrediente[i] = this.vetIngrediente[i + 1];
+        }
+        this.vetIngrediente[this.index - 1] = null;
+        this.index--;
+        return true;
+    }
+
+    public void mostraIngrediente() {
+        for (int i = 0; i < this.index; i++) {
+            System.out.println(this.vetIngrediente[i]);
+        }
     }
 }
