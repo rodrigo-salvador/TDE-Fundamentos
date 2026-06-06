@@ -1,6 +1,6 @@
 
 /**
- * Escreva uma descrição da classe Prato aqui.
+ * Escreva uma descrição da classe Prato aqui. 
  * 
  * @author (seu nome) 
  * @version (um número da versão ou uma data)
