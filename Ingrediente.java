@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 package Trabalho_Final;
-
-
-=======
->>>>>>> origin/develop
 /**
  * Criar uma classe chamada Ingrediente que terá os seguintes atributos: 
  * nome (String), 
