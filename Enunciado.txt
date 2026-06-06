@@ -1,0 +1,75 @@
+Um restaurante que trabalha com pratos feitos contratou sua empresa de desenvolvimento de
+software para desenvolver o software que fará o gerenciamento do seu cardápio.
+Para tanto, criar uma classe chamada Ingrediente que terá os seguintes atributos: nome (String),
+medida (String) e quantidade (double). Crie os métodos básicos para a classe.
+Criar, também, uma classe Prato que terá os seguintes atributos: nome (String), valor (double),
+vetIngredientes (vetor de Ingredientes) e index (int) que servirá para gerenciar as inserções e
+remoções dos ingredientes no vetIngredientes. O construtor desta classe deverá receber como
+parâmetro o nome, o valor do prato e a quantidade de ingredientes que o prato possui. Ainda no
+construtor devem ser atribuídos os valores aos atributos, inicializar o atributo index e instanciar o
+vetor de ingredientes (vetIngredientes) com a quantidade de ingredientes que o prato possui. Crie
+os demais métodos básicos necessários para a classe (estejam atentos ao atributo index que apenas
+a classe deve ter acesso a ele e ao atributo veIngredientes que terá seus próprios métodos de
+acesso, relacionados abaixo). Além do construtor e dos métodos básicos, a classe Prato deve possuir
+os seguintes métodos:
+a) adicionarIngrediente que recebe um Ingrediente e, se houver espaço, adiciona-o ao vetor de
+ingredientes, retorna true se a inserção pode ser realizada ou false se a inserção não foi possível;
+b) consultarIngrediente que recebe o nome do ingrediente, procura-o no vetor de ingredientes e
+o retorna;
+c) removerIngrediente que recebe o nome do ingrediente, consulta-o no vetor de ingredientes e,
+ao encontrá-lo, o remove do vetor de ingredientes, fazendo a reorganização do vetor de
+ingredientes. Retorna true se a remoção foi realizada com sucesso ou false se a remoção não foi
+possível;
+d) buscarPosicao que recebe o nome do ingrediente e retorna a posição em que ele está
+armazenado no vetor de ingredientes. Caso não esteja armazenado, retorna -1;
+O gerenciamento dos pratos deve ser feito na classe Cardapio que também deve ser criada. Nesta
+classe, serão armazenados os pratos do restaurante. Crie um construtor que recebe a quantidade
+de pratos que o restaurante possui e cria o cardápio (vetor de pratos – você define quantos pratos
+haverá no cardápio). Além do construtor, esta classe deve ter os seguintes métodos:
+a) adicionarPrato: insere um objeto prato no vetor e para isto, recebe o objeto prato e retorna true
+se a inserção pode ser realizada ou false se a inserção não foi possível;
+Curso: Ciência da Computação
+Disciplina: Fundamentos de Programação TF – Trabalho Final
+Turma: 11
+Alunos: Profª Adriana Scherer
+2
+b) removerPrato: recebe o nome do prato e, caso ele exista, remove o prato do cardápio,
+reorganiza os objetos e retorna true se a remoção foi realizada com sucesso ou false se a
+remoção não foi possível;
+c) buscarPratoPorNome: recebe o nome do prato e retorna o prato que possui este nome;
+d) buscarPosicao: recebe o prato e retorna a posição do vetor em que este prato está armazenado.
+Caso não esteja armazenado, retorna o valor -1;
+e) buscarPratoIngrediente: recebe o nome do prato e retorna um vetor com os pratos em que este
+ingrediente faça parte;
+f) buscarValorCardapio: retorna o somatório do valor de todos os pratos do restaurante;
+g) buscarPratoEconomico: retorna o prato que possui o menor valor;
+h) mostrarPratos: mostra os dados dos pratos do cardápio.
+Crie uma classe Application que deverá ter o método main com as seguintes funcionalidades que
+deverão acionar o(s) métodos adequados para a realização da operação escolhida.
+1 – Adicionar prato no cardápio
+2 – Remover prato do cardápio
+3 – Consultar cardápio
+4 – Adicionar ingrediente no prato
+5 – Remover ingrediente do prato
+6 – Prato mais econômico
+7 – Pratos que contém um determinado ingrediente
+8 – VOCÊ DEFINE E IMPLEMENTA ESTA FUNCIONALIDADE
+10 – Sair do programa
+Considerações gerais:
+1) Seu programa deve executar enquanto a opção de saída (opção 10) não for informada.
+2) As opções 1 e 2 (Adicionar/Remover prato do cardápio) deve mostrar mensagem informando se
+a inserção/remoção foi feita com sucesso ou se a inserção/remoção não pode ser efetuada.
+3) As opções 4 e 5 (Adicionar/Remover ingrediente do prato) deve mostrar mensagem informando
+se a inserção/remoção foi feita com sucesso ou se a inserção/remoção não pode ser efetuada.
+4) A opção 1 (Adicionar prato no cardápio) deve permitir que o usuário informe quantos
+ingredientes ele quiser para o prato, respeitando o limite máximo de ingredientes que o prato
+possui. Por exemplo: o prato possui 10 ingredientes, mas na inclusão do prato podem ser
+informados apenas 3, ficando as demais posições do vetor sem serem preenchidas.
+5) As opções 6 e 7 mostram as consultas, conforme a funcionalidade, caso o critério de busca não
+exista (para a opção 7), mostrar mensagem adequada.
+6) A opção 8 deve chamar e executar corretamente a funcionalidade que o grupo implementou.
+Tenham em mente que a professora não irá abrir o código para entender, portanto, a
+3
+usabilidade deve ser levada em consideração. Para esta implementação, não utilizem as
+funcionalidades já implementadas nos itens de 1 a 7 do menu. Aproveitem para criar soluções
+criativas para este cenário!

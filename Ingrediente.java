@@ -2,34 +2,67 @@
 /**
  * Escreva uma descrição da classe Ingrediente aqui.
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author (VASCO)
+ * @version (06.02.2026)
  */
+<<<<<<< HEAD
 public class Ingrediente
 {
     private String nome;
     private String medida;
     private double quantidade;
     private ControleIngrediente ingrediente[];
+=======
+public class Ingrediente {
+    // Variaveis de instância
+    private String nome;
+    private String medida;
+    private double quantidade;
+>>>>>>> origin/developvasco
 
-    /**
-     * Construtor para objetos da classe Ingrediente
-     */
-    public Ingrediente()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    // construtor com paramêtro
+    public Ingrediente(String nome, String medida, double quantidade) {
+        this.nome = nome;
+        this.medida = medida;
+        this.quantidade = quantidade;
     }
 
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    // construtor padrão
+    public Ingrediente() {
+        this.nome = null;
+        this.medida = null;
+        this.quantidade = 0;
+    }
+
+    // metodos de acesso
+    // setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setMedida(String medida) {
+        this.medida = medida;
+    }
+
+    public void setQuantidade(double quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    // getters
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getMedida() {
+        return this.medida;
+    }
+
+    public double getQuantidade() {
+        return this.quantidade;
+    }
+
+    // toString
+    public String toString() {
+        return "Nome: " + this.nome + " Medida: " + this.medida + " Quantidade: " + this.quantidade;
     }
 }
