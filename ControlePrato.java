@@ -2,32 +2,54 @@
 /**
  * Escreva uma descrição da classe ControlePrato aqui.
  * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * @author (VASCO)
+ * @version (0.1.0)
  */
-public class ControlePrato
-{
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
+public class ControlePrato {
+    private int index;
+    private Prato vetPrato[];
 
-    /**
-     * Construtor para objetos da classe ControlePrato
-     */
-    public ControlePrato()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    public ControlePrato(int tam) {
+        this.index = 0;
+        this.vetPrato = new Prato[tam];
     }
 
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    public boolean inserePrato(Prato prato) {
+        if (this.index < this.vetPrato.length) {
+            this.vetPrato[this.index] = prato;
+            this.index++;
+            return true;
+        }
+        return false;
+    }
+
+    public int encontraPos(String nome) {
+        int pos = -1;
+        for (int i = 0; i < this.index; i++) {
+            if (this.vetPrato[i].getNome().equals(nome)) {
+                pos = i;
+                return pos;
+            }
+        }
+        return pos;
+    }
+
+    public boolean excluirPrato(String nome) {
+        int pos = encontraPos(nome);
+        if (pos == -1) {
+            return false;
+        }
+        for (int i = pos; i < this.index - 1; i++) {
+            this.vetPrato[i] = this.vetPrato[i + 1];
+        }
+        this.vetPrato[this.index - 1] = null;
+        this.index--;
+        return true;
+    }
+
+    public void mostraPrato() {
+        for (int i = 0; i < this.index; i++) {
+            System.out.println(this.vetPrato[i]);
+        }
     }
 }
