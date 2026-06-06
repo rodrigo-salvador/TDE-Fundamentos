@@ -1,11 +1,15 @@
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/develop
  * Classe intermediária de ingrediente, onde podemos manipular o vetor de ingredientes.
  * Adicionar métodos como:
  * Adicionar ingrediente
  * Remover ingrediente
  * Procurar ingrediente
  */
+<<<<<<< HEAD
 public class ControleIngrediente
 {
     private int index;
@@ -22,6 +26,13 @@ public class ControleIngrediente {
     private int index;
     private Ingrediente vetIngrediente[];
 >>>>>>> origin/developvasco
+=======
+
+public class ControleIngrediente {
+    private int index;
+    private Ingrediente vetIngrediente[];
+
+>>>>>>> origin/develop
 
     public ControleIngrediente(int tam) {
         this.index = 0;

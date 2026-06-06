@@ -1,10 +1,11 @@
-
 /**
- * Escreva uma descrição da classe Ingrediente aqui.
- * 
- * @author (VASCO)
- * @version (06.02.2026)
+ * Criar uma classe chamada Ingrediente que terá os seguintes atributos: 
+ * nome (String), 
+ * medida (String) 
+ * quantidade (double). 
+ * Crie os métodos básicos para a classe.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 public class Ingrediente
 {
@@ -13,13 +14,19 @@ public class Ingrediente
     private double quantidade;
     private ControleIngrediente ingrediente[];
 =======
+=======
+
+>>>>>>> origin/develop
 public class Ingrediente {
     // Variaveis de instância
     private String nome;
     private String medida;
     private double quantidade;
+<<<<<<< HEAD
 >>>>>>> origin/developvasco
 
+=======
+>>>>>>> origin/develop
     // construtor com paramêtro
     public Ingrediente(String nome, String medida, double quantidade) {
         this.nome = nome;

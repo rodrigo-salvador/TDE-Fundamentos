@@ -1,9 +1,9 @@
-
 /**
- * Escreva uma descrição da classe ControlePrato aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * Classe intermediária de pratos, onde podemos manipular o vetor de pratos.
+ * Adicionar métodos como:
+ * Adicionar ingrediente
+ * Remover ingrediente
+ * Procurar ingrediente
  */
 public class ControlePrato
 {
