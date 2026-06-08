@@ -6,12 +6,28 @@ package Trabalho_Final;
  * quantidade (double). 
  * Crie os métodos básicos para a classe.
  */
+<<<<<<< HEAD
+<<<<<<< HEAD
+public class Ingrediente
+{
+    private String nome;
+    private String medida;
+    private double quantidade;
+    private ControleIngrediente ingrediente[];
+=======
+=======
 
+>>>>>>> origin/develop
 public class Ingrediente {
     // Variaveis de instância
     private String nome;
     private String medida;
     private double quantidade;
+<<<<<<< HEAD
+>>>>>>> origin/developvasco
+
+=======
+>>>>>>> origin/develop
     // construtor com paramêtro
     public Ingrediente(String nome, String medida, double quantidade) {
         this.nome = nome;
