@@ -19,10 +19,10 @@ public class TestPrato {
     private String nome;
     private double valor;
     private int index;
-    private FutPrato vetIngrediente;
+    private Prato vetIngrediente;
 
     // construtor
-    public TestPrato(String nome, double valor, FutPrato vetIngrediente) {
+    public TestPrato(String nome, double valor, Prato vetIngrediente) {
         this.nome = nome;
         this.valor = valor;
         this.index = 0;
@@ -39,7 +39,7 @@ public class TestPrato {
         this.valor = valor;
     }
 
-    public void setVetIngrediente(FutPrato ingrediente) {
+    public void setVetIngrediente(Prato ingrediente) {
         this.vetIngrediente = ingrediente;
     }
 
@@ -52,7 +52,7 @@ public class TestPrato {
         return this.valor;
     }
 
-    public FutPrato getVetIngrediente() {
+    public Prato getVetIngrediente() {
         return this.vetIngrediente;
     }
 

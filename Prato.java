@@ -79,4 +79,7 @@ public class Prato {
             System.out.println(this.vetIngrediente[i]);
         }
     }
+    public String toString() {
+        return "Nome: " + this.nome + "\nValor: " + this.valor;
+    }
 }
