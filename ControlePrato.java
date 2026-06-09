@@ -1,6 +1,6 @@
 package Trabalho_Final;
 /**
- * Classe intermediária de pratos, onde podemos manipular o vetor de pratos.
+ * Classe intermediária de pratos (cardapio), onde podemos manipular o vetor de pratos.
  * Adicionar métodos como:
  * Adicionar ingrediente
  * Remover ingrediente
