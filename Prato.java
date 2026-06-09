@@ -7,7 +7,7 @@ package Trabalho_Final;
  * Procurar ingrediente
  * 
  * @author (Vasco)
- * @version (0.1.0)
+ * @version (08.06.2026)
  */
 
 public class Prato {
