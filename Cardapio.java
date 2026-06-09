@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 package Trabalho_Final;
-
-
-=======
->>>>>>> origin/develop
 /**
  * O gerenciamento dos pratos deve ser feito na classe Cardapio que também deve ser criada. 
  * Nesta classe, serão armazenados os pratos do restaurante. Crie um construtor que recebe a quantidade de pratos que o restaurante possui e cria o cardápio (vetor de pratos – você define quantos pratos haverá no cardápio). 
