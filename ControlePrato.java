@@ -8,14 +8,14 @@ package Trabalho_Final;
  */
 public class ControlePrato {
     private int index;
-    private Prato vetPrato[];
+    private TestPrato vetPrato[];
 
     public ControlePrato(int tam) {
         this.index = 0;
-        this.vetPrato = new Prato[tam];
+        this.vetPrato = new TestPrato[tam];
     }
 
-    public boolean inserePrato(Prato prato) {
+    public boolean inserePrato(TestPrato prato) {
         if (this.index < this.vetPrato.length) {
             this.vetPrato[this.index] = prato;
             this.index++;
