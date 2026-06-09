@@ -1,20 +1,10 @@
-<<<<<<< HEAD
 package Trabalho_Final;
-
-
-/**
- * Escreva uma descrição da classe ControlePrato aqui.
- * 
- * @author (VASCO)
- * @version (0.1.0)
-=======
 /**
  * Classe intermediária de pratos, onde podemos manipular o vetor de pratos.
  * Adicionar métodos como:
  * Adicionar ingrediente
  * Remover ingrediente
  * Procurar ingrediente
->>>>>>> origin/develop
  */
 public class ControlePrato {
     private int index;
