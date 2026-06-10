@@ -17,14 +17,14 @@ public class Prato {
     private String nome;
     private double valor;
     private int index;
-    private ControleIngrediente vetIngrediente;
+    private Ingrediente[] vetIngrediente;
 
     // construtor
-    public Prato(String nome, double valor, ControleIngrediente vetIngrediente) {
+    public Prato(String nome, double valor, int index, int tam) {
         this.nome = nome;
         this.valor = valor;
         this.index = 0;
-        this.vetIngrediente = vetIngrediente;
+        this.vetIngrediente = new Ingrediente[tam];
     }
 
     // metodos de acesso
@@ -37,10 +37,6 @@ public class Prato {
         this.valor = valor;
     }
 
-    public void setVetIngrediente(ControleIngrediente ingrediente) {
-        this.vetIngrediente = ingrediente;
-    }
-
     // getters
     public String getNome() {
         return this.nome;
@@ -49,9 +45,72 @@ public class Prato {
     public double getValor() {
         return this.valor;
     }
-
-    public ControleIngrediente getVetIngrediente() {
+    
+    public int getIndex(){
+        return this.index;
+    }
+    
+    public Ingrediente[] getVetIngrediente() {
         return this.vetIngrediente;
+    }
+    
+    public Ingrediente getVetIngrediente(int pos) {
+        return this.vetIngrediente[pos];
+    }
+
+    //Metodos de comportamento
+    //a) adicionar prato.
+    public boolean adicionarPrato(Ingrediente ing1)
+    {
+        if (this.index<this.vetIngrediente.length)
+        {
+            this.vetIngrediente[index] = ing1;
+            index++;
+            return true;
+        }
+        return false;
+    }
+
+    //b)consultar ingrediente.
+
+    public Ingrediente consultarIngrediente(String nomeIng1)
+    {
+        for (int i = 0; i<this.index; i++)
+        {
+            if(this.vetIngrediente[i].getNome().equals(nomeIng1))
+            {
+                return vetIngrediente[i];
+            }
+        }
+        return null;
+    }
+
+    //c)remover ingrediente.
+
+    public boolean removerIngrediente(String ing1)
+    {
+        for (int i = 0; i<this.index; i++)
+        {
+            if(this.vetIngrediente[i].getNome().equals(ing1))
+            {
+                for (int j = i; j < this.index - 1; i++) 
+                {
+                    this.vetIngrediente[i] = this.vetIngrediente[i + 1];
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //d)mostra prato.
+
+    public void mostraPrato() 
+    {
+        for (int i = 0; i < this.index; i++) 
+        {
+            System.out.println(this.vetIngrediente[i]);
+        }
     }
 
     // toString
