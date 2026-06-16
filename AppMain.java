@@ -1,3 +1,4 @@
+package Trabalho_Final;
 /**
  * Crie uma classe Application que deverá ter o método main com as seguintes funcionalidades que deverão acionar o(s) métodos adequados para a realização da operação escolhida.
  * 1 – Adicionar prato no cardápio

@@ -1,3 +1,4 @@
+package Trabalho_Final;
 /**
  * Criar uma classe chamada Ingrediente que terá os seguintes atributos: 
  * nome (String), 
@@ -5,12 +6,12 @@
  * quantidade (double). 
  * Crie os métodos básicos para a classe.
  */
-
 public class Ingrediente {
     // Variaveis de instância
     private String nome;
     private String medida;
     private double quantidade;
+
     // construtor com paramêtro
     public Ingrediente(String nome, String medida, double quantidade) {
         this.nome = nome;
