@@ -1,165 +1,138 @@
-package Trabalho_Final;
 /**
- * Classe intermediária de ingrediente (classe Prato), onde podemos manipular o vetor de ingredientes.
- * Adicionar métodos como:
- * Adicionar ingrediente
- * Remover ingrediente
- * Procurar ingrediente
- * 
- * @author (Vasco)
- * @version (08.06.2026)
+ * Classe intermediária de ingrediente (classe Prato), onde podemos manipular um vetor de objetos do tipo Ingrediente.
+ * a) adicionarIngrediente que recebe um Ingrediente e, se houver espaço, adiciona-o ao vetor de ingredientes, retorna true se a inserção pode ser realizada ou false se a inserção não foi possível;
+ * b) consultarIngrediente que recebe o nome do ingrediente, procura-o no vetor de ingredientes e o retorna;
+ * c) removerIngrediente que recebe o nome do ingrediente, consulta-o no vetor de ingredientes e, ao encontrá-lo, o remove do vetor de ingredientes, fazendo a reorganização do vetor de ingredientes. Retorna true se a remoção foi realizada com sucesso ou false se a remoção não foi possível;
+ * d) buscarPosicao que recebe o nome do ingrediente e retorna a posição em que ele está armazenado no vetor de ingredientes. Caso não esteja armazenado, retorna -1;
  */
-
-public class Prato {
+public class Prato 
+{
+    // Criacao dos atributos privados a classe Prato
     private String nome;
     private double valor;
     private int index;
-<<<<<<< HEAD
-    private Ingrediente vetIngrediente[];
-
-    public Prato(String nome, double valor, int tam) {
-=======
     private Ingrediente[] vetIngrediente;
 
-    // construtor
-    public Prato(String nome, double valor, int index, int tam) {
->>>>>>> origin/developRenato
+    // Criacao do metodo Construtor com paramêtro da classe Prato
+    public Prato(String nome, double valor, int tamanho) 
+    {
         this.nome = nome;
         this.valor = valor;
         this.index = 0;
-        this.vetIngrediente = new Ingrediente[tam];
+        this.vetIngrediente = new Ingrediente[tamanho];
     }
-
-    //metodos de acessso
-    //setters
-    public void setNome(String nome) {
+    // Metodos de Acesso da classe Prato - Setters
+    // Metodo que ira alterar o atributo nome da classe Prato
+    public void setNome(String nome) 
+    {
         this.nome = nome;
     }
-    public void setValor(double valor) {
+    // Metodo que ira alterar o atributo valor da classe Prato
+    public void setValor(double valor) 
+    {
         this.valor = valor;
     }
-
-<<<<<<< HEAD
-    //getters
-=======
-    // getters
->>>>>>> origin/developRenato
-    public String getNome() {
+    // Metodos de Acesso da classe Prato - Getters
+    // Metodo que ira retornar o atributo nome da classe Prato
+    public String getNome() 
+    {
         return this.nome;
     }
-
-    public double getValor() {
+    // Metodo que ira retornar o atributo valor da classe Prato
+    public double getValor() 
+    {
         return this.valor;
     }
-<<<<<<< HEAD
+    // Metodo que ira retornar o atributo index da classe Prato
+    public int getIndex()
+    {
+        return this.index;
+    }
+    // Metodo que ira retornar o vetor de Ingredientes da classe Prato
+    public Ingrediente[] getVetIngrediente() 
+    {
+        return this.vetIngrediente;
 
-    public boolean insereIngrediente(Ingrediente ing) {
-        if (this.index < this.vetIngrediente.length) {
-            this.vetIngrediente[this.index] = ing;
+    }
+    // Metodo que ira retornar o vetor de Ingredientes da classe Prato especifico de uma posicao encaminhada
+    public Ingrediente getVetIngrediente(int posicao) 
+    {
+        return this.vetIngrediente[posicao];
+    }
+    // Metodos exclusivos da classe Prato, utilizados para manipular o vetor de objetos do tipo Ingrediente
+    // Metodo de inserção de Ingredientes no vetor de Ingredientes da classe Prato
+    public boolean adicionarIngrediente(Ingrediente ingrediente) 
+    {
+        // Verificacao do atributo index, atributo que é utilizado para controlar quantas insercoes foram efetuadas no vetor de forma a verificar se a insercao pode ser efetuada dentro do limite de espaco do vetor
+        if (this.index < this.vetIngrediente.length) 
+        {
+            this.vetIngrediente[this.index] = ingrediente;
             this.index++;
             return true;
         }
         return false;
-=======
-    
-    public int getIndex(){
-        return this.index;
     }
-    
-    public Ingrediente[] getVetIngrediente() {
-        return this.vetIngrediente;
->>>>>>> origin/developRenato
-    }
-    
-    public Ingrediente getVetIngrediente(int pos) {
-        return this.vetIngrediente[pos];
-    }
-
-    //Metodos de comportamento
-    //a) adicionar prato.
-    public boolean adicionarPrato(Ingrediente ing1)
+    // Metodo que ira consultar e retornar se o Ingrediente inserido encontra-se no vetor de Ingredientes da classe Prato
+    public Ingrediente consultarIngrediente(String nomeIngrediente)
     {
-        if (this.index<this.vetIngrediente.length)
+        // Loop utilizado para percorrer o vetor de Ingredientes para encontrarmos um ingrediente equivalente ao ingrediente solicitado na consulta
+        for (int i = 0; i < this.index; i++)
         {
-            this.vetIngrediente[index] = ing1;
-            index++;
-            return true;
-        }
-        return false;
-    }
-
-    //b)consultar ingrediente.
-
-    public Ingrediente consultarIngrediente(String nomeIng1)
-    {
-        for (int i = 0; i<this.index; i++)
-        {
-            if(this.vetIngrediente[i].getNome().equals(nomeIng1))
+            // Caso o ingrediente seja encontrado, mostramos o ingrediente
+            if(this.vetIngrediente[i].getNome().equalsIgnoreCase(nomeIngrediente))
             {
                 return vetIngrediente[i];
             }
         }
         return null;
     }
-
-    //c)remover ingrediente.
-
-    public boolean removerIngrediente(String ing1)
+    // Metodo que ira remover um Ingrediente ja inserido no vetor de Ingredientes da classe Prato
+    public boolean removerIngrediente(String nomeIngrediente)
     {
-        for (int i = 0; i<this.index; i++)
+        // Loop utilizado para percorrer o vetor de Ingredientes para encontrarmos um ingrediente equivalente ao ingrediente solicitado na consulta para remocao
+        for (int i = 0; i < this.index; i++)
         {
-            if(this.vetIngrediente[i].getNome().equals(ing1))
+            // Caso o ingrediente seja encontrado, atualizamos o vetor para remocao do ingrediente
+            if(this.vetIngrediente[i].getNome().equalsIgnoreCase(nomeIngrediente))
             {
-                for (int j = i; j < this.index - 1; i++) 
+                // Segundo Loop utilizado caso ocorra a remocao para ordenar o restante dos ingredientes
+                for (int j = i; j < this.index - 1; j++) 
                 {
-                    this.vetIngrediente[i] = this.vetIngrediente[i + 1];
+                    this.vetIngrediente[j] = this.vetIngrediente[j + 1];
                 }
+                // Apos remocao do ingrediente, precisamos atualizar a situacao do vetor, ajustando o index e a ultima posicao
+                this.vetIngrediente[this.index - 1] = null;
+                this.index--;
                 return true;
             }
         }
         return false;
     }
-
-    //d)mostra prato.
-
-    public void mostraPrato() 
+    // Metodo que ira receber o nome de um ingrediente e verificar se ele esta inserido no vetor de Ingredientes da classe Prato, se esta inserido retorna a posicao, se nao retorna -1
+    public int buscaPosicao(String nomeIngrediente) 
     {
+        int posicao = -1;
+        // Loop utilizado para percorrer o vetor de Ingredientes para encontrarmos um ingrediente equivalente ao ingrediente solicitado na consulta
         for (int i = 0; i < this.index; i++) 
         {
-            System.out.println(this.vetIngrediente[i]);
-        }
-    }
-
-    public int encontraPos(String nome) {
-        int pos = -1;
-        for (int i = 0; i < this.index; i++) {
-            if (this.vetIngrediente[i].getNome().equals(nome)) {
-                pos = i;
-                return pos;
+            // Caso o ingrediente seja encontrado, atualizado o valor da posicao e retornamos a mesma
+            if (this.vetIngrediente[i].getNome().equalsIgnoreCase(nomeIngrediente)) 
+            {
+                posicao = i;
+                return posicao;
             }
         }
-        return pos;
+        return posicao;
     }
-
-    public boolean excluirIngrediente(String nome) {
-        int pos = encontraPos(nome);
-        if (pos == -1) {
-            return false;
+    // Metodo que ira retornar em formato de String todos os atributos da classe Prato
+    public String toString()
+    {
+        String resultado = "Nome: " + this.nome + "\nValor: R$ " + this.valor + "\nIngredientes:";
+        // Loop utilizado para demonstrar os Ingredientes que a classe Prato possui
+        for(int i = 0; i < this.index; i++)
+        {
+            resultado += "\n- " + this.vetIngrediente[i];
         }
-        for (int i = pos; i < this.index - 1; i++) {
-            this.vetIngrediente[i] = this.vetIngrediente[i + 1];
-        }
-        this.vetIngrediente[this.index - 1] = null;
-        this.index--;
-        return true;
-    }
-
-    public void mostraIngrediente() {
-        for (int i = 0; i < this.index; i++) {
-            System.out.println(this.vetIngrediente[i]);
-        }
-    }
-    public String toString() {
-        return "Nome: " + this.nome + "\nValor: " + this.valor;
+        return resultado;
     }
 }

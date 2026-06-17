@@ -1,4 +1,3 @@
-package Trabalho_Final;
 /**
  * Crie uma classe Application que deverá ter o método main com as seguintes funcionalidades que deverão acionar o(s) métodos adequados para a realização da operação escolhida.
  * 1 – Adicionar prato no cardápio
@@ -22,29 +21,91 @@ package Trabalho_Final;
  * Para esta implementação, não utilizem as funcionalidades já implementadas nos itens de 1 a 7 do menu. 
  * Aproveitem para criar soluções criativas para este cenário!
  */
+import java.util.Scanner;
 public class AppMain
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
-
-    /**
-     * Construtor para objetos da classe AppMain
-     */
-    public AppMain()
+    public static void main(String args[])
     {
-        // inicializa variáveis de instância
-        x = 0;
-    }
+        Scanner input = new Scanner(System.in);
+        int opcao;
 
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+        do
+        {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1 - Adicionar prato no cardápio");
+            System.out.println("2 - Remover prato do cardápio");
+            System.out.println("3 - Consultar cardápio");
+            System.out.println("4 - Adicionar ingrediente no prato");
+            System.out.println("5 - Remover ingrediente do prato");
+            System.out.println("6 - Prato mais econômico");
+            System.out.println("7 - Pratos que contém um determinado ingrediente");
+            System.out.println("8 - Funcionalidade extra");
+            System.out.println("10 - Sair do programa");
+            System.out.print("Escolha uma opção: ");
+
+            opcao = input.nextInt();
+
+            switch(opcao)
+            {
+                case 1:
+                    // Verificar se nessa opcao o usuario determina ou criamos anteriormente
+                    System.out.println("Quantos pratos serão adicionados ao cardápio?");
+                    int tamanhoCardapio = input.nextInt();
+                    System.out.println("Por favor, informe o nome do Prato:");
+                    String nome = input.nextLine();
+                    System.out.println("Por favor, informe o valor do Prato:");
+                    double valor = input.nextDouble();
+                    System.out.println("Por favor, informe a quantidade de ingredientes do Prato:");
+                    int tamanho = input.nextInt();
+                    Cardapio cardapio = new Cardapio(tamanhoCardapio);
+                    Prato prato = new Prato(nome, valor, tamanho);
+                    Prato[] vetPrato = new Prato[tamanho]; 
+                    cardapio.adicionarPrato(vetPrato, prato);
+                    break;
+
+                case 2:
+                    System.out.println("Remover prato");
+                    // chamar método correspondente
+                    break;
+
+                case 3:
+                    System.out.println("Consultar cardápio");
+                    // chamar método correspondente
+                    break;
+
+                case 4:
+                    System.out.println("Adicionar ingrediente");
+                    // chamar método correspondente
+                    break;
+
+                case 5:
+                    System.out.println("Remover ingrediente");
+                    // chamar método correspondente
+                    break;
+
+                case 6:
+                    System.out.println("Prato mais econômico");
+                    // chamar método correspondente
+                    break;
+
+                case 7:
+                    System.out.println("Pratos com determinado ingrediente");
+                    // chamar método correspondente
+                    break;
+
+                case 8:
+                    System.out.println("Funcionalidade extra");
+                    // chamar método correspondente
+                    break;
+
+                case 10:
+                    System.out.println("Programa encerrado.");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while(opcao != 10);
+        input.close();
     }
 }
