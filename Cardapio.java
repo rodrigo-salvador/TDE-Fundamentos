@@ -12,6 +12,7 @@
  * g) buscarPratoEconomico: retorna o prato que possui o menor valor;
  * h) mostrarPratos: mostra os dados dos pratos do cardápio.
  */
+import java.util.Scanner;
 public class Cardapio 
 {
     // Criacao dos atributos privados a classe Cardapio
@@ -23,6 +24,16 @@ public class Cardapio
     {
         this.vetPrato = new Prato[tamanho];
         this.index = 0;
+    }
+    // Metodo que ira retornar o atributo index da classe Cardapio
+    public int getIndex()
+    {
+        return this.index;
+    }
+    // Metodo que ira retornar o vetor de Pratos da classe Cardapio
+    public Prato[] getVetPrato() 
+    {
+        return this.vetPrato;
     }
     // Metodos exclusivos da classe Cardapio, utilizados para manipular o vetor de objetos do tipo Prato
     // Metodo de inserção de Pratos no vetor de Pratos da classe Cardapio
@@ -152,12 +163,34 @@ public class Cardapio
         }
         return this.vetPrato[posicao];
     }
+    // Metodo que ira receber um valor para avaliar o cardapio
+    public void avaliarCardapio(Scanner input)
+    {
+        int nota;
+        // Loop para garantir que o usuario informe uma nota valida
+        do
+        {
+            System.out.println("Informe uma nota de 1 a 10:");
+            nota = input.nextInt();
+        }
+        while(nota < 1 || nota > 10);
+        input.nextLine();
+
+        // Solicitacao de um comentario associado a nota
+        System.out.println("Agradecemos o registro, por favor, deixe um comentário:");
+        String comentario = input.nextLine();
+
+        // Impressao da avaliacao
+        System.out.println("\nAvaliação registrada!");
+        System.out.println("Nota: " + nota);
+        System.out.println("Comentário: " + comentario);
+    }
     // Recebe um vetor de pratos, e mostra o ToString de cada um.
-    public void mostrarPratos(Prato[] vetPrato) 
+    public void mostrarPratos() 
     {
         // Loop utilizado para demonstrar os Pratos que a classe Cardapio possui
         for (int i = 0; i < this.index; i++) 
-      {
+        {
             System.out.print(vetPrato[i]);
         }
     }
