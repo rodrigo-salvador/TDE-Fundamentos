@@ -18,12 +18,18 @@ public class Cardapio
     // Criacao dos atributos privados a classe Cardapio
     private int index;
     private Prato[] vetPrato;
+    private int[] notas;
+    private String[] comentarios;
+    private int indiceAvaliacao;
 
     // Criacao do metodo Construtor com paramêtro da classe Cardapio
     public Cardapio(int tamanho) 
     {
         this.vetPrato = new Prato[tamanho];
         this.index = 0;
+        notas = new int[100];
+        comentarios = new String[100];
+        this.indiceAvaliacao = 0;
     }
     // Metodo que ira retornar o atributo index da classe Cardapio
     public int getIndex()
@@ -37,7 +43,7 @@ public class Cardapio
     }
     // Metodos exclusivos da classe Cardapio, utilizados para manipular o vetor de objetos do tipo Prato
     // Metodo de inserção de Pratos no vetor de Pratos da classe Cardapio
-    public boolean adicionarPrato(Prato[] vetPrato, Prato prato) 
+    public boolean adicionarPrato(Prato prato) 
     {
         // Verificacao do atributo index, atributo que é utilizado para controlar quantas insercoes foram efetuadas no vetor de forma a verificar se a insercao pode ser efetuada dentro do limite de espaco do vetor
         if (this.index < this.vetPrato.length)
@@ -163,27 +169,52 @@ public class Cardapio
         }
         return this.vetPrato[posicao];
     }
-    // Metodo que ira receber um valor para avaliar o cardapio
+    // Metodo para armazenar um valor e comentario de avaliacao do cardapio
     public void avaliarCardapio(Scanner input)
     {
+        if(indiceAvaliacao >= notas.length)
+        {
+            System.out.println("Limite de avaliações atingido.");
+            return;
+        }
+
         int nota;
-        // Loop para garantir que o usuario informe uma nota valida
+
         do
         {
             System.out.println("Informe uma nota de 1 a 10:");
             nota = input.nextInt();
         }
         while(nota < 1 || nota > 10);
+
         input.nextLine();
 
-        // Solicitacao de um comentario associado a nota
         System.out.println("Agradecemos o registro, por favor, deixe um comentário:");
         String comentario = input.nextLine();
 
-        // Impressao da avaliacao
-        System.out.println("\nAvaliação registrada!");
-        System.out.println("Nota: " + nota);
-        System.out.println("Comentário: " + comentario);
+        // Armazenando nota e comentario no vetor correspondente
+        notas[indiceAvaliacao] = nota;
+        comentarios[indiceAvaliacao] = comentario;
+        indiceAvaliacao++;
+
+        System.out.println("\nAvaliação registrada, agradecemos!");
+    }
+    // Metodo utilizado para consultar as avaliacoes e comentarios efetuados do cardapio
+    public void consultarAvaliacoes()
+    {
+        if(indiceAvaliacao == 0)
+        {
+            System.out.println("Nenhuma avaliação cadastrada.");
+            return;
+        }
+
+        for(int i = 0; i < indiceAvaliacao; i++)
+        {
+            System.out.println("Avaliação " + (i + 1));
+            System.out.println("Nota: " + notas[i]);
+            System.out.println("Comentário: " + comentarios[i]);
+            System.out.println();
+        }
     }
     // Recebe um vetor de pratos, e mostra o ToString de cada um.
     public void mostrarPratos() 
