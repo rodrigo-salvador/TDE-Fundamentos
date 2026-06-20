@@ -1,3 +1,4 @@
+
 /**
  * O gerenciamento dos pratos deve ser feito na classe Cardapio que também deve
  * ser criada.
@@ -23,21 +24,31 @@
  * g) buscarPratoEconomico: retorna o prato que possui o menor valor;
  * h) mostrarPratos: mostra os dados dos pratos do cardápio.
  */
+import java.util.Scanner;
+
 public class Cardapio {
     // Criacao dos atributos privados a classe Cardapio
     private int index;
     private Prato[] vetPrato;
+    private int[] notas;
+    private String[] comentarios;
+    private int indiceAvaliacao;
 
     // Criacao do metodo Construtor com paramêtro da classe Cardapio
     public Cardapio(int tamanho) {
         this.vetPrato = new Prato[tamanho];
         this.index = 0;
+        notas = new int[100];
+        comentarios = new String[100];
+        this.indiceAvaliacao = 0;
     }
 
+    // Metodo que ira retornar o atributo index da classe Cardapio
     public int getIndex() {
         return this.index;
     }
 
+    // Metodo que ira retornar o vetor de Pratos da classe Cardapio
     public Prato[] getVetPrato() {
         return this.vetPrato;
     }
@@ -178,12 +189,54 @@ public class Cardapio {
         return this.vetPrato[posicao];
     }
 
+    // Metodo para armazenar um valor e comentario de avaliacao do cardapio
+    public void avaliarCardapio(Scanner input) {
+        if (indiceAvaliacao >= notas.length) {
+            System.out.println("Limite de avaliações atingido.");
+            return;
+        }
+
+        int nota;
+
+        do {
+            System.out.println("Informe uma nota de 1 a 10:");
+            nota = input.nextInt();
+        } while (nota < 1 || nota > 10);
+
+        input.nextLine();
+
+        System.out.println("Agradecemos o registro, por favor, deixe um comentário:");
+        String comentario = input.nextLine();
+
+        // Armazenando nota e comentario no vetor correspondente
+        notas[indiceAvaliacao] = nota;
+        comentarios[indiceAvaliacao] = comentario;
+        indiceAvaliacao++;
+
+        System.out.println("\nAvaliação registrada, agradecemos!");
+    }
+
+    // Metodo utilizado para consultar as avaliacoes e comentarios efetuados do
+    // cardapio
+    public void consultarAvaliacoes() {
+        if (indiceAvaliacao == 0) {
+            System.out.println("Nenhuma avaliação cadastrada.");
+            return;
+        }
+
+        for (int i = 0; i < indiceAvaliacao; i++) {
+            System.out.println("Avaliação " + (i + 1));
+            System.out.println("Nota: " + notas[i]);
+            System.out.println("Comentário: " + comentarios[i]);
+            System.out.println();
+        }
+    }
+
     // Recebe um vetor de pratos, e mostra o ToString de cada um.
     public void mostrarPratos() {
         // Loop utilizado para demonstrar os Pratos que a classe Cardapio possui
-        System.out.println("***************");
         for (int i = 0; i < this.index; i++) {
-            System.out.println(this.vetPrato[i]);
+            System.out.print(vetPrato[i]);
         }
         System.out.println("***************");
     }

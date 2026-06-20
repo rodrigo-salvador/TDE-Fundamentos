@@ -27,9 +27,8 @@ import java.util.Scanner;
 public class AppMain {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
-        int opcao;
-
         Cardapio cardapio = new Cardapio(10);
+        int opcao;
 
         do {
             System.out.println("\n===== MENU =====");
@@ -48,129 +47,175 @@ public class AppMain {
 
             switch (opcao) {
                 case 1:
-
-                    if (cardapio.getIndex() == cardapio.getVetPrato().length) {
-                        System.out.println(
-                                "O cardápio está cheio, se quiser adicionar outro prato, tente remover algum outro antes.");
-                    } {
-                    System.out.println("Qual será o nome do prato?");
-                    String nomePratoNovo = input.nextLine();
-
-                    System.out.println("Qual será o valor do prato?");
-                    double valorPratoNovo = input.nextDouble();
-
-                    System.out.println("Quantos ingredientes terá o prato novo?");
-                    int tamPratoNovo = input.nextInt();
-
-                    Prato pratoNovo = new Prato(nomePratoNovo, valorPratoNovo, tamPratoNovo);
-
-                    System.out.println("Insira os dados dos ingredientes escolhidos.");
-
-                    for (int i = 0; i < tamPratoNovo; i++) {
-                        System.out.println("Qual será o nome do ingrediente " + i + 1 + "?");
-                        String nomeIng1 = input.nextLine();
-
-                        System.out.println("Qual será a medida do ingrediente " + i + 1 + "?");
-                        String medidaIng1 = input.nextLine();
-
-                        System.out.println("Qual será o nome do ingrediente " + i + 1 + "?");
-                        double quantidadeIng1 = input.nextDouble();
-
-                        Ingrediente ingredienteNovo = new Ingrediente(nomeIng1, medidaIng1, quantidadeIng1);
-
-                        if (pratoNovo.adicionarIngrediente(ingredienteNovo)) {
-                            System.out.println("Ingrediente adicionado com sucesso.");
-                        } else {
-                            System.out.println("Não foi possível adicionar este ingrediente.");
+                    System.out.println("Você acessou a opção de adicionar um prato do cardápio");
+                    String escolha;
+                    do {
+                        if (cardapio.getIndex() == cardapio.getVetPrato().length) {
+                            System.out.println(
+                                "Infelizmente o cardápio está cheio, se quiser adicionar um prato novo ao cardápio será necessário remover algum prato existente antes.");
+                            break;
                         }
-                    }
-                }
+                        System.out.println("Por favor, informe o nome do Prato:");
+                        String nome = input.nextLine();
+
+                        System.out.println("Por favor, informe o valor do Prato:");
+                        double valor = input.nextDouble();
+
+                        System.out.println("Por favor, informe a quantidade de ingredientes que terá o Prato:");
+                        int tamanho = input.nextInt();
+
+                        input.nextLine(); // Garantia de armazenamento do proximo string a ser inserido
+
+                        Prato prato = new Prato(nome, valor, tamanho);
+
+                        System.out.println("Por favor, informe a respeito dos ingredientes:");
+
+                        for (int i = 0; i < tamanho; i++) {
+                            System.out.println("Por favor, informe o nome do ingrediente nº" + (i + 1) + ":");
+                            String nomeIngrediente = input.nextLine();
+
+                            System.out.println("Por favor, informe a medida do ingrediente nº" + (i + 1) + ":");
+                            String medidaIngrediente = input.nextLine();
+
+                            System.out.println("Por favor, informe a quantidade do ingrediente nº" + (i + 1) + ":");
+                            double quantidadeIngrediente = input.nextDouble();
+
+                            input.nextLine();
+
+                            Ingrediente ingrediente = new Ingrediente(nomeIngrediente, medidaIngrediente,
+                                    quantidadeIngrediente);
+                            prato.adicionarIngrediente(ingrediente);
+
+                            if (prato.adicionarIngrediente(ingrediente)) {
+                                System.out.println("Ingrediente adicionado com sucesso.");
+                            } else {
+                                System.out.println("Não foi possível adicionar este ingrediente.");
+                            }
+                        }
+
+                        if (cardapio.adicionarPrato(prato)) {
+                            System.out.println("Prato adicionado com sucesso.");
+                        } else {
+                            System.out.println("Não foi possível adicionar o prato.");
+                        }
+
+                        System.out.println("Você gostaria de adicionar um novo prato ou voltar para o menu?");
+                        System.out.println("S - Adicionar um novo prato ao cardápio");
+                        System.out.println("N - Retornar ao menu");
+
+                        escolha = input.nextLine();
+                    } while (escolha.equalsIgnoreCase("S"));
                     break;
 
                 case 2:
-                    System.out.println("Escolha o nome de um prato para removê-lo.");
-                    String nomePratoRemover = input.nextLine();
+                    String escolha2;
+                    System.out.println("Você acessou a opção de remover um prato do cardápio");
+                    do {
+                        System.out.println("Informe o nome do prato que deseja remover:");
+                        String nomePratoRemover = input.nextLine();
 
-                    if (cardapio.removerPrato(nomePratoRemover)) {
-                        System.out.println("Prato removido com sucesso.");
-                    } else {
-                        System.out.println("Prato não localizado no cardápio.");
-                    }
+                        if (cardapio.removerPrato(nomePratoRemover)) {
+                            System.out.println("Prato removido com sucesso.");
+                        } else {
+                            System.out.println("Prato não encontrado no cardápio.");
+                        }
 
+                        System.out.println("Você gostaria de remover um novo prato ou voltar para o menu?");
+                        System.out.println("S - Remover um novo prato ao cardápio");
+                        System.out.println("N - Retornar ao menu");
+
+                        escolha2 = input.nextLine();
+                    } while (escolha2.equalsIgnoreCase("S"));
                     break;
 
                 case 3:
-                    System.out.println("Os pratos disponíveis no cardápio são:");
+                    System.out.println("Você acessou a opção de consulta do cardápio");
                     cardapio.mostrarPratos();
                     break;
 
-                case 4: // Nao sei se ela vai aceitar essa validacao com IF, REVISAR
-                        // DEPOIS*************************
-                    System.out.println("A qual prato você gostaria de adicionar um ingrediente?");
-                    String nomePratoAddIng = input.nextLine();
-
-                    if (cardapio.buscarPratoPorNome(nomePratoAddIng) == null) {
-                        System.out.println("Este prato não existe.");
+                case 4:
+                    System.out.println("Você acessou a opção de adicionar ingredientes a um prato");
+                    System.out.println("Qual prato você gostaria de adicionar ingredientes?");
+                    String nomePratoBusca = input.nextLine();
+                    // Garantindo que existe o prato no cardapio
+                    if (cardapio.buscarPratoPorNome(nomePratoBusca) == null) {
+                        System.out
+                        .println("O prato que você gostaria de adicionar ingredientes não existe no cardápio.");
                     } else {
-                        if (cardapio.buscarPratoPorNome(nomePratoAddIng).getIndex() == cardapio
-                                .buscarPratoPorNome(nomePratoAddIng).getVetIngrediente().length) {
-                            System.out.print("O prato já está cheio, não é possível adicionar mais ingredientes");
+                        // Garantindo que existe espaco para adicao de ingredientes no prato
+                        if (cardapio.buscarPratoPorNome(nomePratoBusca)
+                        .getIndex() == cardapio.buscarPratoPorNome(nomePratoBusca).getVetIngrediente().length) {
+                            System.out.println(
+                                "Infelizmente o prato não possui mais espaço para adição de novos ingredientes.");
                         } else {
-                            System.out.println("Qual o nome do ingrediente?");
-                            String nomeIngAdd = input.nextLine();
+                            System.out.println(
+                                "Por favor, informe o nome do ingrediente que você gostaria de adicionar ao prato:");
+                            String nomeIngrediente = input.nextLine();
 
-                            System.out.println("Qual a medida desse ingrediente?");
-                            String medidaIng = input.nextLine();
+                            System.out.println(
+                                "Por favor, informe a medida do ingrediente que você gostaria de adicionar ao prato:");
+                            String medidaIngrediente = input.nextLine();
 
-                            System.out.println("Qual a quantidade desse ingrediente?");
-                            double quantidadeIng = input.nextDouble();
+                            System.out.println(
+                                "Por favor, informe a quantidade do ingrediente que você gostaria de adicionar ao prato:");
+                            double quantidadeIngrediente = input.nextDouble();
 
-                            Ingrediente ing1 = new Ingrediente(nomeIngAdd, medidaIng, quantidadeIng);
-                            cardapio.buscarPratoPorNome(nomePratoAddIng).adicionarIngrediente(ing1);
+                            input.nextLine();
+
+                            Ingrediente ingrediente = new Ingrediente(nomeIngrediente, medidaIngrediente,
+                                    quantidadeIngrediente);
+                            cardapio.buscarPratoPorNome(nomePratoBusca).adicionarIngrediente(ingrediente);
+
+                            System.out.println("Ingrediente adicionado ao prato informado.");
                         }
                     }
-
                     break;
 
                 case 5:
-                    System.out.println("Qual prato será escolhido para a remoção do ingrediente?");
-                    String nomePratoRemoverIng = input.nextLine();
-
-                    if (cardapio.buscarPratoPorNome(nomePratoRemoverIng) == null) {
+                    System.out.println("Você acessou a opção de remover ingredientes a um prato");
+                    System.out.println("Qual prato você gostaria de remover ingredientes?");
+                    String nomePratoRemoverIngrediente = input.nextLine();
+                    // Garantindo que existe o prato no cardapio
+                    if (cardapio.buscarPratoPorNome(nomePratoRemoverIngrediente) == null) {
                         System.out.println("Este prato não existe.");
                     } else {
+                        // Mediante confirmacao da existentencia do prato, perguntamos qual ingrediente
+                        // sera removido
                         System.out.println("Qual ingrediente será removido?");
-                        String nomeIngRemover = input.nextLine();
-
-                        if (cardapio.buscarPratoPorNome(nomePratoRemoverIng).removerIngrediente(nomeIngRemover)) {
-                            System.out.println("Ingrediente Removido com sucesso");
+                        String nomeIngredienteRemover = input.nextLine();
+                        // Se o ingrediente existe na relacao de ingredientes do prato, removemos
+                        if (cardapio.buscarPratoPorNome(nomePratoRemoverIngrediente)
+                        .removerIngrediente(nomeIngredienteRemover)) {
+                            System.out.println("Ingrediente removido do Prato com sucesso");
                         } else {
-                            System.out.println("Este ingrediente não está no prato selecionado.");
+                            System.out.println(
+                                "Este ingrediente não pertence a relação de ingredientes do prato selecionado.");
                         }
                     }
                     break;
 
                 case 6:
-                    System.out.print("O prato mais econômico é: ");
+                    System.out.println("Você acessou a opção de verificar qual é o prato mais econômico do cardápio.");
+                    System.out.print("O prato mais econômico é:");
                     cardapio.buscarPratoEconomico();
                     break;
 
                 case 7:
+                    System.out.println(
+                        "Você acessou a opção de verificar quais pratos possuem determinados ingredientes.");
                     System.out.println("Qual ingrediente você procura?");
                     String nomeIngredienteProcura = input.nextLine();
-
-                    cardapio.buscarPratoIngrediente(nomeIngredienteProcura); // DUVIDA, não sei se precisa mostrar o
-                                                                             // vetor com S.O.T ou só retornar o vetor
-
+                    System.out.println("Os pratos que possuem o ingrediente que você informou são:");
+                    cardapio.buscarPratoIngrediente(nomeIngredienteProcura);
                     break;
 
                 case 8:
-                    System.out.println("Funcionalidade extra");
-                    // chamar método correspondente
+                    System.out.println("Você acessou a opção de avaliação do cardápio.");
+                    cardapio.avaliarCardapio(input);
                     break;
 
                 case 10:
-                    System.out.println("Programa encerrado.");
+                    System.out.println("Finalizando o programa.");
                     break;
 
                 default:
