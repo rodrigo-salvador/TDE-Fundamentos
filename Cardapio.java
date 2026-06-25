@@ -201,7 +201,7 @@ public class Cardapio {
         do {
             System.out.println("Informe uma nota de 1 a 10:");
             nota = input.nextInt();
-        } while (nota < 1 || nota > 10);
+        } while (nota < 0 || nota > 10);
 
         input.nextLine();
 
