@@ -48,6 +48,10 @@ public class Cardapio {
         return this.index;
     }
 
+    public int getIndiceAvaliacao() {
+        return this.indiceAvaliacao;
+    }
+
     // Metodo que ira retornar o vetor de Pratos da classe Cardapio
     public Prato[] getVetPrato() {
         return this.vetPrato;
@@ -232,11 +236,11 @@ public class Cardapio {
         }
     }
 
-    // Recebe um vetor de pratos, e mostra o ToString de cada um.
+    // Recebe mostra o ToString do vetor de pratos.
     public void mostrarPratos() {
         // Loop utilizado para demonstrar os Pratos que a classe Cardapio possui
         for (int i = 0; i < this.index; i++) {
-            System.out.print(vetPrato[i]);
+            System.out.println(this.vetPrato[i]);
         }
         System.out.println("***************");
     }
