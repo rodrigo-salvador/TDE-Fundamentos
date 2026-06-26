@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-package Trabalho_Final;
-=======
->>>>>>> developRenato
 import java.util.Scanner;
 
 public class AppMain {
@@ -42,10 +38,7 @@ public class AppMain {
                         
                         System.out.println("Por favor, informe o nome do Prato:");
                         String nome = input.nextLine();
-<<<<<<< HEAD
-=======
                         
->>>>>>> developRenato
 
                         System.out.println("Por favor, informe o valor do Prato:");
                         double valor = input.nextDouble();
@@ -239,12 +232,8 @@ public class AppMain {
                     }
                     else
                     {
-<<<<<<< HEAD
-                        System.out.print("O prato mais econômico é:\n" + cardapio.buscarPratoEconomico());
-=======
                         System.out.println("O prato mais econômico é: ");
                         System.out.println(cardapio.buscarPratoEconomico());
->>>>>>> developRenato
                     }
                     break;
 

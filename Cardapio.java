@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-package Trabalho_Final;
-=======
->>>>>>> developRenato
 import java.util.Scanner;
 
 public class Cardapio {
