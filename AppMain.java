@@ -45,7 +45,7 @@ public class AppMain {
             System.out.print("Escolha uma opção: ");
 
             opcao = input.nextInt();
-
+//teste
             switch (opcao) {
                 case 1:
                     System.out.println();
