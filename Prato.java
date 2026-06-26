@@ -1,3 +1,5 @@
+package Trabalho_Final;
+
 /**
  * Classe intermediária de ingrediente (classe Prato), onde podemos manipular um vetor de objetos do tipo Ingrediente.
  * a) adicionarIngrediente que recebe um Ingrediente e, se houver espaço, adiciona-o ao vetor de ingredientes, retorna true se a inserção pode ser realizada ou false se a inserção não foi possível;

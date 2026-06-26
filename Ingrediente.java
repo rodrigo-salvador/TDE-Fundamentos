@@ -1,3 +1,5 @@
+package Trabalho_Final;
+
 /**
  * Criar uma classe chamada Ingrediente que terá os seguintes atributos: 
  * nome (String), 
