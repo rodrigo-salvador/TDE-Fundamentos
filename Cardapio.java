@@ -16,6 +16,10 @@ import java.util.Scanner;
 public class Cardapio 
 {
     // Criacao dos atributos privados a classe Cardapio
+    // Alem dos metodos solicitados no edital do trabalho, foram adicionados 3 novos atributos a classe Cardapio, o vetor de notas, vetor de comentarios e o indice de avaliacao.
+    // O vetor de notas sera um vetor que ira armazenar as notas registradas referente a um cardapio
+    // O vetor de comentarios sera um vetor que ira armazenas os comentarios registrados referente a um cardapio
+    // O indice de avaliacao e um valor de controle para sabermos se existem e se podemos adicionar uma avaliacao
     private int index;
     private Prato[] vetPrato;
     private int[] notas;
@@ -172,14 +176,17 @@ public class Cardapio
     // Metodo para armazenar um valor e comentario de avaliacao do cardapio
     public void avaliarCardapio(Scanner input)
     {
+        // Caso o atributo de controle do registro de avaliacoes seja equivalente ou maior ao tamanho do vetor, informamos que nao possuimos espaço para registrar mais avaliacoes
         if(indiceAvaliacao >= notas.length)
         {
             System.out.println("Limite de avaliações atingido.");
             return;
         }
 
+        // inicializamos uma variavel de armazenamento para inserirmos no vetor de avaliacao
         int nota;
 
+        // Loop que garante que a nota que o usuario vai encaminhar esta dentro dos criterios de avaliacao
         do
         {
             System.out.println("Informe uma nota de 1 a 10:");
@@ -187,6 +194,7 @@ public class Cardapio
         }
         while(nota < 1 || nota > 10);
 
+        // Comando utilizado para fazer a leitura correta dos comentarios, de forma que nao de problema na leitura 
         input.nextLine();
 
         System.out.println("Agradecemos o registro, por favor, deixe um comentário:");
@@ -202,12 +210,13 @@ public class Cardapio
     // Metodo utilizado para consultar as avaliacoes e comentarios efetuados do cardapio
     public void consultarAvaliacoes()
     {
+        // Caso o atributo de controle de registro de avaliacoes nao tenha um valor positivo, significa que nao temos nenhuma avaliacao do cardapio registrada
         if(indiceAvaliacao == 0)
         {
             System.out.println("Nenhuma avaliação cadastrada.");
             return;
         }
-
+        // Caso o atributo seja positivo, utilizamos de um Loop para percorrer as avaliacoes registradas utilizando do atributo de controle de registros e demonstramos as avaliacoes
         for(int i = 0; i < indiceAvaliacao; i++)
         {
             System.out.println("Avaliação " + (i + 1));
@@ -216,13 +225,22 @@ public class Cardapio
             System.out.println();
         }
     }
-    // Recebe um vetor de pratos, e mostra o ToString de cada um.
+    // ToString do vetor de Pratos
     public void mostrarPratos() 
     {
         // Loop utilizado para demonstrar os Pratos que a classe Cardapio possui
         for (int i = 0; i < this.index; i++) 
         {
             System.out.print(vetPrato[i]);
+        }
+    }
+    // Recebe um vetor de pratos, e mostra o ToString dele
+    public void mostrarPratosParametro(Prato[] prato) 
+    {
+        for (int i = 0; i < this.index; i++) 
+        {
+            System.out.println("***************");
+            System.out.println(prato[i]);
         }
     }
 }
