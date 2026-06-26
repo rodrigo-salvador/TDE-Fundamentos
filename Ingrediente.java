@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Trabalho_Final;
 
 /**
@@ -7,6 +8,8 @@ package Trabalho_Final;
  * quantidade (double). 
  * Crie os métodos básicos para a classe.
  */
+=======
+>>>>>>> developRenato
 public class Ingrediente 
 {
     // Criacao dos atributos privados a classe Ingrediente

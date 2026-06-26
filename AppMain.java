@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 package Trabalho_Final;
+=======
+>>>>>>> developRenato
 import java.util.Scanner;
 
 public class AppMain {
@@ -8,7 +11,7 @@ public class AppMain {
         int opcao;
 
         do {
-            System.out.println("\n===== MENU =====");
+            System.out.println("===== MENU =====");
             System.out.println("1 - Adicionar prato no cardápio");
             System.out.println("2 - Remover prato do cardápio");
             System.out.println("3 - Consultar cardápio");
@@ -36,8 +39,13 @@ public class AppMain {
                                 "Infelizmente o cardápio está cheio, se quiser adicionar um prato novo ao cardápio será necessário remover algum prato existente antes.");
                             break;
                         }
+                        
                         System.out.println("Por favor, informe o nome do Prato:");
                         String nome = input.nextLine();
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> developRenato
 
                         System.out.println("Por favor, informe o valor do Prato:");
                         double valor = input.nextDouble();
@@ -61,13 +69,20 @@ public class AppMain {
                             System.out.println("Informe a quantidade do ingrediente nº" + (i + 1) + ":");
                             double quantidadeIngrediente = input.nextDouble();
 
-                            input.nextLine();
-
                             Ingrediente ingrediente = new Ingrediente(nomeIngrediente, medidaIngrediente,
                                     quantidadeIngrediente);
-                            prato.adicionarIngrediente(ingrediente);
+                                    
+                            if (prato.adicionarIngrediente(ingrediente))
+                            {
+                                System.out.println("Ingrediente adicionado com sucesso.");
+                            }
+                            else
+                            {
+                                System.out.println("INão foi possível adicionar ingrediente.");
+                            }
+                            
                         }
-
+                        
                         if (cardapio.adicionarPrato(prato)) {
                             System.out.println("Prato adicionado com sucesso.");
                         } else {
@@ -77,7 +92,9 @@ public class AppMain {
                         System.out.println("Você gostaria de adicionar um novo prato ou voltar para o menu?");
                         System.out.println("S - Adicionar um novo prato ao cardápio");
                         System.out.println("N - Retornar ao menu");
-
+                        
+                        input.nextLine();
+                        
                         escolha = input.nextLine();
                     } while (escolha.equalsIgnoreCase("S"));
                     break;
@@ -222,7 +239,12 @@ public class AppMain {
                     }
                     else
                     {
+<<<<<<< HEAD
                         System.out.print("O prato mais econômico é:\n" + cardapio.buscarPratoEconomico());
+=======
+                        System.out.println("O prato mais econômico é: ");
+                        System.out.println(cardapio.buscarPratoEconomico());
+>>>>>>> developRenato
                     }
                     break;
 
@@ -241,7 +263,7 @@ public class AppMain {
                         System.out.println("Qual ingrediente você procura?");
                         String nomeIngredienteProcura = input.nextLine();
                         System.out.println("Os pratos que possuem o ingrediente que você informou são:");
-                        cardapio.buscarPratoIngrediente(nomeIngredienteProcura);
+                        cardapio.mostrarPratosParametro(cardapio.buscarPratoIngrediente(nomeIngredienteProcura));
                     }
 
                     break;

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 package Trabalho_Final;
+=======
+>>>>>>> developRenato
 import java.util.Scanner;
 
 public class Cardapio {
@@ -215,8 +218,15 @@ public class Cardapio {
     public void mostrarPratos() {
         // Loop utilizado para demonstrar os Pratos que a classe Cardapio possui
         for (int i = 0; i < this.index; i++) {
+            System.out.println("***************");
             System.out.println(this.vetPrato[i]);
         }
-        System.out.println("***************");
+    }
+    
+    public void mostrarPratosParametro(Prato[] prato) {
+        for (int i = 0; i < this.index; i++) {
+            System.out.println("***************");
+            System.out.println(prato[i]);
+        }
     }
 }

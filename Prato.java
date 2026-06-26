@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Trabalho_Final;
 
 /**
@@ -7,6 +8,8 @@ package Trabalho_Final;
  * c) removerIngrediente que recebe o nome do ingrediente, consulta-o no vetor de ingredientes e, ao encontrá-lo, o remove do vetor de ingredientes, fazendo a reorganização do vetor de ingredientes. Retorna true se a remoção foi realizada com sucesso ou false se a remoção não foi possível;
  * d) buscarPosicao que recebe o nome do ingrediente e retorna a posição em que ele está armazenado no vetor de ingredientes. Caso não esteja armazenado, retorna -1;
  */
+=======
+>>>>>>> developRenato
 public class Prato 
 {
     // Criacao dos atributos privados a classe Prato

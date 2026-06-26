@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Ingrediente
-comment0.text=\r\n\ Criar\ uma\ classe\ chamada\ Ingrediente\ que\ ter\u00E1\ os\ seguintes\ atributos\:\ \r\n\ nome\ (String),\ \r\n\ medida\ (String)\ \r\n\ quantidade\ (double).\ \r\n\ Crie\ os\ m\u00E9todos\ b\u00E1sicos\ para\ a\ classe.\r\n
 comment1.params=nome\ medida\ quantidade
 comment1.target=Ingrediente(java.lang.String,\ java.lang.String,\ double)
 comment2.params=nome
