@@ -1,27 +1,3 @@
-
-/**
- * Crie uma classe Application que deverá ter o método main com as seguintes funcionalidades que deverão acionar o(s) métodos adequados para a realização da operação escolhida.
- * 1 – Adicionar prato no cardápio
- * 2 – Remover prato do cardápio
- * 3 – Consultar cardápio
- * 4 – Adicionar ingrediente no prato
- * 5 – Remover ingrediente do prato
- * 6 – Prato mais econômico
- * 7 – Pratos que contém um determinado ingrediente
- * 8 – VOCÊ DEFINE E IMPLEMENTA ESTA FUNCIONALIDADE
- * 10 – Sair do programa
- * Considerações gerais:
- * 1) Seu programa deve executar enquanto a opção de saída (opção 10) não for informada.
- * 2) As opções 1 e 2 (Adicionar/Remover prato do cardápio) deve mostrar mensagem informando se a inserção/remoção foi feita com sucesso ou se a inserção/remoção não pode ser efetuada.
- * 3) As opções 4 e 5 (Adicionar/Remover ingrediente do prato) deve mostrar mensagem informando se a inserção/remoção foi feita com sucesso ou se a inserção/remoção não pode ser efetuada.
- * 4) A opção 1 (Adicionar prato no cardápio) deve permitir que o usuário informe quantos ingredientes ele quiser para o prato, respeitando o limite máximo de ingredientes que o prato possui. 
- * Por exemplo: o prato possui 10 ingredientes, mas na inclusão do prato podem ser informados apenas 3, ficando as demais posições do vetor sem serem preenchidas.
- * 5) As opções 6 e 7 mostram as consultas, conforme a funcionalidade, caso o critério de busca não exista (para a opção 7), mostrar mensagem adequada.
- * 6) A opção 8 deve chamar e executar corretamente a funcionalidade que o grupo implementou. 
- * Tenham em mente que a professora não irá abrir o código para entender, portanto, a usabilidade deve ser levada em consideração. 
- * Para esta implementação, não utilizem as funcionalidades já implementadas nos itens de 1 a 7 do menu. 
- * Aproveitem para criar soluções criativas para este cenário!
- */
 import java.util.Scanner;
 
 public class AppMain {
@@ -31,7 +7,7 @@ public class AppMain {
         int opcao;
 
         do {
-            System.out.println("\n===== MENU =====");
+            System.out.println("===== MENU =====");
             System.out.println("1 - Adicionar prato no cardápio");
             System.out.println("2 - Remover prato do cardápio");
             System.out.println("3 - Consultar cardápio");
@@ -48,6 +24,7 @@ public class AppMain {
 
             switch (opcao) {
                 case 1:
+                    input.nextLine();
                     System.out.println();
                     System.out.println("-------------------------");
                     System.out.println("Você acessou a opção de adicionar um prato do cardápio");
@@ -58,9 +35,10 @@ public class AppMain {
                                 "Infelizmente o cardápio está cheio, se quiser adicionar um prato novo ao cardápio será necessário remover algum prato existente antes.");
                             break;
                         }
+                        
                         System.out.println("Por favor, informe o nome do Prato:");
                         String nome = input.nextLine();
-                        input.nextLine();
+                        
 
                         System.out.println("Por favor, informe o valor do Prato:");
                         double valor = input.nextDouble();
@@ -84,13 +62,20 @@ public class AppMain {
                             System.out.println("Informe a quantidade do ingrediente nº" + (i + 1) + ":");
                             double quantidadeIngrediente = input.nextDouble();
 
-                            input.nextLine();
-
                             Ingrediente ingrediente = new Ingrediente(nomeIngrediente, medidaIngrediente,
                                     quantidadeIngrediente);
-                            prato.adicionarIngrediente(ingrediente);
+                                    
+                            if (prato.adicionarIngrediente(ingrediente))
+                            {
+                                System.out.println("Ingrediente adicionado com sucesso.");
+                            }
+                            else
+                            {
+                                System.out.println("INão foi possível adicionar ingrediente.");
+                            }
+                            
                         }
-
+                        
                         if (cardapio.adicionarPrato(prato)) {
                             System.out.println("Prato adicionado com sucesso.");
                         } else {
@@ -100,7 +85,9 @@ public class AppMain {
                         System.out.println("Você gostaria de adicionar um novo prato ou voltar para o menu?");
                         System.out.println("S - Adicionar um novo prato ao cardápio");
                         System.out.println("N - Retornar ao menu");
-
+                        
+                        input.nextLine();
+                        
                         escolha = input.nextLine();
                     } while (escolha.equalsIgnoreCase("S"));
                     break;
@@ -245,8 +232,8 @@ public class AppMain {
                     }
                     else
                     {
-                        System.out.print("O prato mais econômico é:");
-                        cardapio.buscarPratoEconomico();
+                        System.out.println("O prato mais econômico é: ");
+                        System.out.println(cardapio.buscarPratoEconomico());
                     }
                     break;
 
@@ -265,7 +252,7 @@ public class AppMain {
                         System.out.println("Qual ingrediente você procura?");
                         String nomeIngredienteProcura = input.nextLine();
                         System.out.println("Os pratos que possuem o ingrediente que você informou são:");
-                        cardapio.buscarPratoIngrediente(nomeIngredienteProcura);
+                        cardapio.mostrarPratosParametro(cardapio.buscarPratoIngrediente(nomeIngredienteProcura));
                     }
 
                     break;

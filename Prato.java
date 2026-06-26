@@ -1,10 +1,3 @@
-/**
- * Classe intermediária de ingrediente (classe Prato), onde podemos manipular um vetor de objetos do tipo Ingrediente.
- * a) adicionarIngrediente que recebe um Ingrediente e, se houver espaço, adiciona-o ao vetor de ingredientes, retorna true se a inserção pode ser realizada ou false se a inserção não foi possível;
- * b) consultarIngrediente que recebe o nome do ingrediente, procura-o no vetor de ingredientes e o retorna;
- * c) removerIngrediente que recebe o nome do ingrediente, consulta-o no vetor de ingredientes e, ao encontrá-lo, o remove do vetor de ingredientes, fazendo a reorganização do vetor de ingredientes. Retorna true se a remoção foi realizada com sucesso ou false se a remoção não foi possível;
- * d) buscarPosicao que recebe o nome do ingrediente e retorna a posição em que ele está armazenado no vetor de ingredientes. Caso não esteja armazenado, retorna -1;
- */
 public class Prato 
 {
     // Criacao dos atributos privados a classe Prato

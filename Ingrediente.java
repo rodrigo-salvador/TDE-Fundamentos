@@ -1,10 +1,3 @@
-/**
- * Criar uma classe chamada Ingrediente que terá os seguintes atributos: 
- * nome (String), 
- * medida (String) 
- * quantidade (double). 
- * Crie os métodos básicos para a classe.
- */
 public class Ingrediente 
 {
     // Criacao dos atributos privados a classe Ingrediente
